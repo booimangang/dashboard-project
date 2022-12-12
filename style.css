@@ -32,10 +32,6 @@ html {
   gap: 40px;
 }
 
-.main-cell {
-  /* background-color: aquamarine; */
-}
-
 .heading {
   grid-column: 1 / 4;
   padding: 1em 0;
@@ -64,11 +60,6 @@ html {
   width: 2em;
   opacity: 0.8;
 }
-
-/* .latest-upload {
-  border-radius: 10%;
-  background-color: var(--secondary-clr);
-} */
 
 .latest-upload img {
   border-radius: 10%;
@@ -132,8 +123,10 @@ html {
   display: grid;
   justify-items: center;
   background-color: var(--secondary-clr);
+  background-color: #00046b;
   padding: 1.5rem 0;
   border-radius: 10%;
+  color: white;
 }
 
 .recent-task .urgent-task img {
@@ -147,6 +140,59 @@ html {
 .recent-task .urgent-task div:nth-child(3) {
   opacity: 0.6;
   margin-top: 0.4rem;
+}
+
+.daily-plan {
+  display: grid;
+  grid-template: 1fr 1fr;
+  grid-template-rows: 0.33fr 0.33fr 0.33fr;
+  background-image: url(./img/sky.jpg);
+  background-position: center;
+  border-radius: 10%;
+  padding: 2.5em;
+}
+
+.daily-plan div:nth-child(1) {
+  grid-column: 1 / 3;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.daily-plan .daily-comment {
+  font-size: 1rem;
+  margin-top: 0.5em;
+  opacity: 0.6;
+}
+
+.daily-plan .temperature {
+  font-size: 3rem;
+  margin-top: 0.5em;
+}
+
+.daily-plan .add-plan {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  place-self: end end;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 30% 0 30% 30%;
+  text-align: center;
+
+  display: grid;
+  place-items: center center;
+}
+
+.daily-plan .add-plan div {
+  font-size: 1em;
+  background-color: rgb(25, 56, 231);
+  color: white;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center center;
 }
 
 .latest-updates {
