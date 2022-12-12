@@ -32,7 +32,8 @@ html {
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 14vh 37vh 37vh;
+  /* grid-template-rows: 14vh 37vh 37vh; */
+  grid-template-rows: max(14vh, 1fr) max(37vh, 15fr) max(37vh, 15fr);
   column-gap: 2rem;
   row-gap: 1rem;
   margin-right: 2rem;
@@ -220,14 +221,32 @@ html {
 }
 
 .app-news {
-  background-color: #0d9488;
+  /* background-color: #0d9488; */
   padding: 1em;
 }
 
 .app-news .app {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.app-news .app .add-app {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-items: space-between;
+  place-items: center;
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 15px;
+  padding: 0em 2.5em;
+  font-size: var(--fs-small);
+  margin-bottom: 1em;
+}
+
+.app-news .app .notifications {
+  display: grid;
+  border-radius: 10px;
+  padding: 1em 0;
+  font-size: var(--fs-small);
+  margin-bottom: 1em;
 }
 
 .app-news .app-list {
@@ -235,6 +254,7 @@ html {
   grid-template-columns: 8fr 1fr;
   align-items: center;
   padding: 0.2em 0;
+  font-size: var(--fs-small);
 }
 
 /* Comiofhiushf */
