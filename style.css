@@ -15,21 +15,27 @@ html {
   --secondary-clr: #f9a8d4;
   --third-clr: #f6cde3;
   --accent-clr: #0d9488;
+
+  --fs-xlarge: 3rem;
+  --fs-large: 2rem;
+  --fs-medium: 1.5rem;
+  --fs-xmedium: 1.3rem;
+  --fs-small: 0.8rem;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  /* min-height: 100vh; */
-  padding: 30px;
-  gap: 40px;
+  gap: 2em;
 }
 
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 0.5fr 2fr;
-  gap: 40px;
+  grid-template-rows: 14vh 37vh 37vh;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  margin-right: 2rem;
 }
 
 .heading {
@@ -42,38 +48,50 @@ html {
 }
 
 .heading .greeting {
-  font-size: 1rem;
+  font-size: var(--fs-small);
   opacity: 0.6;
 }
 
 .heading .info {
-  font-size: 1.5rem;
-  padding: 0.5em 0;
+  font-size: var(--fs-xmedium);
+  padding: 0.2em 0;
 }
 
 .heading-menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: end;
 }
 
 .heading-menu img {
-  width: 2em;
+  width: 1.5em;
   opacity: 0.8;
 }
 
-.latest-upload img {
-  border-radius: 10%;
+.latest-upload {
+  display: grid;
+  grid-template-rows: 3fr / 1fr;
+
+  background-image: url(./img/file.png);
+  background-position: center;
   background-color: var(--third-clr);
-  width: 100%;
+  padding: 2em;
+}
+
+.latest-upload div {
+  grid-row: 2 / 3;
+  align-self: end;
+}
+
+.latest-upload div div:nth-child(1) {
+  margin-top: 1em;
+  font-size: var(--fs-xmedium);
+  font-weight: 500;
 }
 
 .latest-upload div:nth-child(2) {
   margin-top: 1em;
-  font-weight: 400;
-}
-
-.latest-upload div:nth-child(3) {
-  margin-top: 0.5em;
+  font-size: var(--fs-small);
   opacity: 0.6;
 }
 
@@ -82,28 +100,35 @@ html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
+  background-color: var(--secondary-clr);
 }
 
 .recent-task .regular-task {
-  margin-left: 1rem;
+  margin-left: 2em;
+}
+
+.recent-task .regular-task div:nth-child(1) {
+  font-size: var(--fs-small);
 }
 
 .recent-task .regular-task div:nth-child(2) {
-  font-size: 1.5rem;
+  font-size: var(--fs-xmedium);
 }
 
 .recent-task .regular-task div:nth-child(3) {
-  margin-top: 0.4rem;
+  font-size: var(--fs-small);
   opacity: 0.6;
 }
 
 .recent-task .folder-image {
-  width: 100%;
+  width: 40%;
+  justify-self: center;
 }
 
 .recent-task .media {
   display: grid;
   justify-items: center;
+  align-items: start;
 }
 
 .recent-task .media img {
@@ -116,16 +141,16 @@ html {
 
 .recent-task .media div:nth-child(3) {
   opacity: 0.6;
-  margin-top: 0.4rem;
+  margin-top: 0.2rem;
+  font-size: var(--fs-small);
 }
 
 .recent-task .urgent-task {
   display: grid;
   justify-items: center;
-  background-color: var(--secondary-clr);
   background-color: #00046b;
-  padding: 1.5rem 0;
-  border-radius: 10%;
+  width: 10em;
+  padding: 1rem 0;
   color: white;
 }
 
@@ -145,27 +170,26 @@ html {
 .daily-plan {
   display: grid;
   grid-template: 1fr 1fr;
-  grid-template-rows: 0.33fr 0.33fr 0.33fr;
+  grid-template-rows: 1fr 1fr 1fr;
   background-image: url(./img/sky.jpg);
   background-position: center;
-  border-radius: 10%;
-  padding: 2.5em;
+  padding: 2em;
 }
 
 .daily-plan div:nth-child(1) {
   grid-column: 1 / 3;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: var(--fs-large);
 }
 
 .daily-plan .daily-comment {
-  font-size: 1rem;
-  margin-top: 0.5em;
+  font-size: var(--fs-xmedium);
+  margin-top: 0.2em;
   opacity: 0.6;
 }
 
 .daily-plan .temperature {
-  font-size: 3rem;
+  font-size: var(--fs-xlarge);
   margin-top: 0.5em;
 }
 
@@ -173,8 +197,8 @@ html {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   place-self: end end;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: white;
   border-radius: 30% 0 30% 30%;
   text-align: center;
@@ -184,22 +208,36 @@ html {
 }
 
 .daily-plan .add-plan div {
-  font-size: 1em;
+  font-size: var(--fs-small);
   background-color: rgb(25, 56, 231);
+  border-radius: 50%;
   color: white;
   width: 2.5em;
   height: 2.5em;
-  border-radius: 50%;
 
   display: grid;
   place-items: center center;
 }
 
-.latest-updates {
-  grid-column: 1 / 4;
-  background-color: var(--accent-clr);
+.app-news {
+  background-color: #0d9488;
+  padding: 1em;
 }
 
+.app-news .app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: space-between;
+}
+
+.app-news .app-list {
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+  align-items: center;
+  padding: 0.2em 0;
+}
+
+/* Comiofhiushf */
 .sidebar {
   background-color: var(--primary-clr);
   grid-column: 1 / 2;
